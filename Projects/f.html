@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login & Registration</title>
+    <link rel="stylesheet" href="firstUI.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script type="module" src="firebaseauthhhh.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login or Register</h1>
+        
+        <div id="loginSection">
+            <form id="loginForm" onsubmit="return validateLoginForm()">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your email" required>
+                <div id="loginEmailError" class="error"></div>
+
+                <label for="loginPassword">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password" required>
+                    <span class="eye-icon" id="eyeIconLogin" onclick="togglePasswordVisibility('loginPassword', 'eyeIconLogin')">👁</span>
+                </div>
+                <div id="loginPasswordError" class="error"></div>
+
+                <button type="submit">Login</button>
+            </form>
+            <div class="link">Don't have an account? <a href="javascript:void(0);" onclick="toggleSection('register')">Create an account</a></div>
+        </div>
+
+        <div id="registerSection" style="display: none;">
+            <h1>Register</h1>
+            <div id="signUpMessage" class="messageDiv" style="display: none;"></div>
+            <form id="registerForm">
+                <label for="registerEmail">Email:</label>
+                <input type="email" id="registerEmail" name="registerEmail" placeholder="Enter your email" required>
+                <div id="registerEmailError" class="error"></div>
+        
+                <label for="registerPassword">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="registerPassword" name="registerPassword" placeholder="Enter your password" required>
+                    <span class="eye-icon" id="eyeIconRegister" onclick="togglePasswordVisibility('registerPassword', 'eyeIconRegister')">👁</span>
+                </div>
+                <div id="registerPasswordError" class="error"></div>
+        
+                <label for="confirmPassword">Confirm Password:</label>
+                <div class="password-container">
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                    <span class="eye-icon" id="eyeIconConfirm" onclick="togglePasswordVisibility('confirmPassword', 'eyeIconConfirm')">👁</span>
+                </div>
+                <div id="confirmPasswordError" class="error"></div>
+        
+                <button type="button" id="CreateAcc">Create Account</button>
+            </form>
+            <div class="link">Already have an account? <a href="javascript:void(0);" onclick="toggleSection('login')">Log in</a></div>
+        </div>
+
+        <div id="loginSuccess" class="success" style="display: none;">Login Successful!</div>
+    </div>
+    <!-- <script type="module" src="firebaseauthhhh.js"></script> -->
+</body>
+</html>

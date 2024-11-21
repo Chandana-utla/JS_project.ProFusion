@@ -1,0 +1,57 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 300px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+form {
+    margin: 20px 0;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    text-align: left;
+}
+
+.success {
+    color: green;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+}
+
+.eye-icon {
+    margin-left: 10px;
+    cursor: pointer;
+}

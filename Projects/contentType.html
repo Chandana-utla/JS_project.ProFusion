@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Zone Selection</title>
+    
+   
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <style>
+       
+        body {
+            font-family: 'Bebas Neue', sans-serif;
+            background: linear-gradient(280deg, whitesmoke, #283618);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            width: 45%;
+        }
+        .button:hover {
+            background-color: #45a049; 
+        }
+        .button:active {
+            background-color: #388e3c; 
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        #result {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #4CAF50; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Content Creator Zone</h1>
+        <p>What kind of zone are you interested in creating content about?</p>
+
+        <select id="contentZone" name="contentZone">
+            <option value="">Select a Zone</option>
+            <option value="Tech">Tech</option>
+            <option value="Health">Health & Fitness</option>
+            <option value="Travel">Travel</option>
+            <option value="Writer">Writer</option>
+            <option value="Food">Food & Cooking</option>
+            <option value="Education">Education & Tutorials</option>
+        </select>
+
+        <button class="button" onclick="submitSelection()">Submit</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function submitSelection() {
+            const contentZone = document.getElementById("contentZone").value;
+            const result = document.getElementById("result");
+
+            if (contentZone === "") {
+                alert("Please select a content zone.");
+            } else {
+                result.style.display = "block";
+                result.textContent = `Great choice! You are interested in the "${contentZone}" zone.`;
+            }
+        }
+    </script>
+
+</body>
+</html>
